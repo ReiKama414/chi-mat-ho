@@ -311,7 +311,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
     marginRight: 8,
-    height: '100%',
   },
   optionName: {
     fontWeight: 'bold',
@@ -319,12 +318,10 @@ const styles = StyleSheet.create({
   },
   optionType: {
     fontSize: 14,
-    marginTop: 4,
     maxWidth: '90%',
   },
   optionLocation: {
     fontSize: 12,
-    marginTop: 2,
     maxWidth: '90%',
   },
   optionActions: {

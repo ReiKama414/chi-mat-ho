@@ -183,28 +183,42 @@ export default function HomeScreen() {
         )}
 
         {finalOption && (
-          <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-            <NeonText
-              size={32}
-              style={styles.selectedName}
+          <Animated.View
+            style={{
+              transform: [{ scale: scaleAnim }],
+              alignItems: 'flex-start',
+            }}
+          >
+            <CyberCard
+              style={
+                (styles.resultCard,
+                {
+                  paddingTop: 6,
+                  alignItems: 'flex-start',
+                  width: '100%',
+                })
+              }
+              neonColor={theme.neonBlue}
             >
-              {finalOption.name}
-            </NeonText>
+              <NeonText size={32} style={styles.selectedName}>
+                {finalOption.name}
+              </NeonText>
 
-            {/* 顯示詳細資訊 */}
-            {finalOption.type && (
-              <Text style={styles.selectedDetail}>🍱 {finalOption.type}</Text>
-            )}
-            {finalOption.location && (
-              <Text style={styles.selectedDetail}>
-                📍 {finalOption.location}
-              </Text>
-            )}
-            {'liked' in finalOption && (
-              <Text style={styles.selectedDetail}>
-                {finalOption.liked ? '❤️ 喜歡的' : '💔 普通'}
-              </Text>
-            )}
+              {/* 顯示詳細資訊 */}
+              {finalOption.type && (
+                <Text style={styles.selectedDetail}>🍱 {finalOption.type}</Text>
+              )}
+              {finalOption.location && (
+                <Text style={styles.selectedDetail}>
+                  📍 {finalOption.location}
+                </Text>
+              )}
+              {'liked' in finalOption && (
+                <Text style={styles.selectedDetail}>
+                  {finalOption.liked ? '❤️ 喜歡的' : '💔 普通'}
+                </Text>
+              )}
+            </CyberCard>
           </Animated.View>
         )}
       </View>
@@ -233,6 +247,7 @@ const styles = StyleSheet.create({
   resultCard: {
     marginBottom: 30,
     minHeight: 150,
+    width: '100%',
   },
   resultContent: {
     alignItems: 'center',
